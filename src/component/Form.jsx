@@ -32,7 +32,12 @@ class LiveForm extends Component {
           id: "111111111aaaa",
           channel_id: "channel1"
         };
-        axios.post(url, { card })
+        axios.post(url, {
+          name: "card199990",
+          content: "999999999999",
+          id: "9999999999",
+          channel_id: "channel1"
+        })
         .then(res => {
             console.log('succes');
         }).catch(error => {
