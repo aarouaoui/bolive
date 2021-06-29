@@ -18,11 +18,9 @@ class LiveForm extends Component {
         var requestOptions = {
             method: 'POST',
             headers: { 
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin' : '*',
-              'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
+              'Content-Type': 'application/json'
            },
-            body: {name : "card10" , content:"ididid", id : "idididi", channel_id:"channel1"},
+            body: {"name" : "card10" , "content":"ididid", "id" : "idididi", "channel_id":"channel1"},
         };
         axios.post(url, requestOptions)
         .then(res => {
