@@ -14,7 +14,8 @@ class LiveForm extends Component {
       handleSubmitForm(event) {
         event.preventDefault()
         const url= "https://4ymem8ew75.execute-api.us-east-2.amazonaws.com/prod/card";
-        
+        axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
+        axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
         var requestOptions = {
             method: 'POST',
             headers: { 
@@ -22,7 +23,14 @@ class LiveForm extends Component {
            },
             body: {"name" : "card10" , "content":"ididid", "id" : "idididi", "channel_id":"channel1"},
         };
-        axios.post(url, requestOptions)
+          
+        const card = {
+          name: "card10",
+          content: "ididid",
+          id: "111111111aaaa",
+          channel_id: "channel1"
+        };
+        axios.post(url, { card })
         .then(res => {
             console.log('succes');
         }).catch(error => {
