@@ -39,6 +39,7 @@ class LiveForm extends Component {
         })
         .then(res => {
             console.log('succes');
+            console.log(Math.random().toString(36).substr(2, 9)):
         }).catch(error => {
             console.log(error);
         })
