@@ -33,7 +33,7 @@ class LiveForm extends Component {
         };
         axios.post(url, {
           name: "card199990",
-          content: "999999999999",
+          content: this.state.content,
           id: "9999999999",
           channel_id: "channel1"
         })
