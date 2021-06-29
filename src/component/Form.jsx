@@ -34,7 +34,7 @@ class LiveForm extends Component {
         axios.post(url, {
           name: "card199990",
           content: this.state.content,
-          id: "9999999999",
+          id: Math.random().toString(36).substr(2, 9),
           channel_id: "channel1"
         })
         .then(res => {
