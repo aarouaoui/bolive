@@ -14,7 +14,9 @@ class LiveForm extends Component {
       handleSubmitForm(event) {
         event.preventDefault()
         const url= "https://4ymem8ew75.execute-api.us-east-2.amazonaws.com/prod/card";
-        axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
+        axios.defaults.headers.post['Access-Control-Allow-Headers'] ='Content-Type';
+        axios.defaults.headers.post['Access-Control-Allow-Methods'] ='*'
+        axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8'
         axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
         var requestOptions = {
             method: 'POST',
