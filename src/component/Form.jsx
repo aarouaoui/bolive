@@ -25,21 +25,16 @@ class LiveForm extends Component {
             body: {"name" : "card10" , "content":"ididid", "id" : "idididi", "channel_id":"channel1"},
         };
           
-        const card = {
-          name: "card10",
-          content: "ididid",
-          id: "111111111aaaa",
-          channel_id: "channel1"
-        };
-        axios.post(url, {
+        const card =  {
           name: "card199990",
           content: this.state.content,
           id: Math.random().toString(36).substr(2, 9),
           channel_id: "channel1"
-        })
+        };
+        axios.post(url, card)
         .then(res => {
             console.log('succes');
-            console.log(Math.random().toString(36).substr(2, 9));
+            console.log(card.id);
         }).catch(error => {
             console.log(error);
         })
