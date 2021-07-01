@@ -1,5 +1,6 @@
 import React , {Component} from "react";
 import axios from 'axios';
+import { w3cwebsocket as W3CWebSocket } from "websocket";
 
 class LiveForm extends Component {
 
@@ -36,6 +37,11 @@ class LiveForm extends Component {
         .then(res => {
             console.log('succes');
             console.log(card.id);
+            var data = JSON.stringify({
+              "action": "message",
+              "message": card.content
+              });
+            this.client.send(data)
         }).catch(error => {
             console.log(error);
         })
