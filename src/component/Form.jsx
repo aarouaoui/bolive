@@ -9,6 +9,7 @@ class LiveForm extends Component {
         this.state = {
           content: ""
         };
+        this.client = new W3CWebSocket('wss://m1l7vq7ida.execute-api.us-east-2.amazonaws.com/production');
       }
      
       handleSubmitForm(event) {
