@@ -8,7 +8,8 @@ class LiveForm extends Component {
         super(props);
      
         this.state = {
-          content: ""
+          content: "",
+          title: ""  
         };
         this.client = new W3CWebSocket('wss://m1l7vq7ida.execute-api.us-east-2.amazonaws.com/production');
       }
@@ -28,7 +29,7 @@ class LiveForm extends Component {
         };
           
         const card =  {
-          name: "card199990",
+          name: this.state.title,
           content: this.state.content,
           id: Math.random().toString(36).substr(2, 9),
           channel_id: "channel1"
@@ -51,19 +52,31 @@ class LiveForm extends Component {
      
       handleChange(event) {
         var value = event.target.value;
-     
         this.setState({
           content: value
         });
       }
-     
+    
+      handleTitleChange(event) {
+        var value = event.target.value;
+        this.setState({
+          title: value
+        });
+      }
+    
       render() {
         return (
           <form onSubmit={event => this.handleSubmitForm(event)}>
+             <label>
+              Titre:
+              <input
+                value={this.state.content}
+                onChange={event => this.handleTitleChange(event)}
+              />
+            </label>
             <label>
-              Content:
+              Contenu:
               <textarea
-                type="tex"
                 value={this.state.content}
                 onChange={event => this.handleChange(event)}
               />
