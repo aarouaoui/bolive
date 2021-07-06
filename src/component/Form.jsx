@@ -29,7 +29,7 @@ class LiveForm extends Component {
         };
           
         const card =  {
-          name: this.state.title,
+          title: this.state.title,
           content: this.state.content,
           id: Math.random().toString(36).substr(2, 9),
           channel_id: "channel1"
