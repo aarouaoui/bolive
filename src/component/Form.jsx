@@ -70,7 +70,7 @@ class LiveForm extends Component {
              <label>
               Titre:
               <input
-                value={this.state.content}
+                value={this.state.title}
                 onChange={event => this.handleTitleChange(event)}
               />
             </label>
