@@ -40,9 +40,9 @@ class LiveForm extends Component {
             console.log(card.id);
             var data = {
               "action": "message",
-              "message": card
+              "message": JSON.stringify({ "title": this.state.title, "content":this.state.content })
               };
-            this.client.send(data)
+            this.client.send(JSON.stringify(data));
         }).catch(error => {
             console.log(error);
         })
@@ -67,21 +67,15 @@ class LiveForm extends Component {
       render() {
         return (
           <form onSubmit={event => this.handleSubmitForm(event)}>
-             <label>
-              Titre:
-              <input
-                value={this.state.title}
-                onChange={event => this.handleTitleChange(event)}
-              />
-            </label>
-            <label>
-              Contenu:
-              <textarea
-                value={this.state.content}
-                onChange={event => this.handleChange(event)}
-              />
-            </label>
-            <input type="submit" value="Submit" />        
+            <div class="form-group" >
+              <label for="exampleInputEmail1">Titre</label>
+              <input value={this.state.title} onChange={event => this.handleTitleChange(event)} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Titre"/>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Text</label>
+              <textarea value={this.state.content} onChange={event => this.handleChange(event)} type="text" class="form-control" id="exampleInputPassword1" placeholder="Text"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         );
       }

@@ -3,9 +3,9 @@ import Form from './component/Form';
 
 function App() {
   return (
-    <div class="row">
-      <div class="col">
-        <h1>Bo Live</h1>
+    <div class="container-fluid">
+      <div class="bd-example">
+        <h1>BO Live</h1>
         <Form /> 
       </div>
     </div>
