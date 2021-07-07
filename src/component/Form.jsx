@@ -40,7 +40,7 @@ class LiveForm extends Component {
             console.log(card.id);
             var data = JSON.stringify({
               "action": "message",
-              "message": card.content
+              "message": card
               });
             this.client.send(data)
         }).catch(error => {
