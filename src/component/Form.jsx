@@ -38,10 +38,10 @@ class LiveForm extends Component {
         .then(res => {
             console.log('succes');
             console.log(card.id);
-            var data = JSON.stringify({
+            var data = {
               "action": "message",
               "message": card
-              });
+              };
             this.client.send(data)
         }).catch(error => {
             console.log(error);
